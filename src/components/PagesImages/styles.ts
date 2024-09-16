@@ -2,17 +2,54 @@ import styled from "styled-components";
 
 export const PagesImagesContainer = styled.div`
     width: 20rem;
-    height: 15rem;
-    background: orange;
+    height: 20rem;
+
+    background: ${props => props.theme["white-500"]};
+
+    border-radius: 12px;
+
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+
+    &:hover {
+        background: ${props => props.theme["white-900"]};
+        transform: scale(1.05)
+    }
 `;
 
-export const PageImage = styled.image`
-    width: 12rem;
-    width: 12rem;
+export const PageImageContent = styled.a`
+    height: 100%;
 
-    background: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 2rem;
+    gap: 2rem;
+
+    text-align: center;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+`;
+
+export const PageImage = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    width: 120px;
+    height: 120px;
 `;
 
 export const PageTitle = styled.p`
-    font-size: 1.4rem;
+    font-size: 2rem;
+    
+    transition: color 0.3s ease-in-out;
+
+    ${PagesImagesContainer}:hover & {
+        color: ${props => props.theme["blue-100"]};
+    }
 `;
