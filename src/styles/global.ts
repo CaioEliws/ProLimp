@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialised;
     }
 
-    body, input, textarea, button, select {
+    html, body, input, textarea, button, select {
         font: 400 1.6rem Montserrat, sans-serif;
     }
 

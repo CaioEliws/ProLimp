@@ -11,7 +11,7 @@ export function Header() {
             <ContactContainer>
                 <Links1>
                     <a href="#">19 99256-4309</a>
-                    <a href="#">contato@prolimp.com</a>
+                    <a href="#">somosprolimp@gmail.com</a>
                 </Links1>
 
                 <Links2>
