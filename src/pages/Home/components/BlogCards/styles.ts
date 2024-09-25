@@ -22,6 +22,8 @@ export const BlogCardsContainer = styled.a`
 
         border-top-right-radius: 16px;
         border-top-left-radius: 16px;
+
+        object-fit: cover;
     }
 
     p {

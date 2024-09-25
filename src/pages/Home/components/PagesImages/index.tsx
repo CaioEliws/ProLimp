@@ -1,14 +1,14 @@
 import { PageImage, PageImageContent, PagesImagesContainer, PageTitle } from "./styles";
 
-import sofaImg from '../../assets/Images/sofa.png'
-import carroImg from '../../assets/Images/carro.png'
-import puffImg from '../../assets/Images/puff.png'
-import carpeteImg from '../../assets/Images/carpete.png'
-import cadeiraImg from '../../assets/Images/cadeira.png'
-import tapeteImg from '../../assets/Images/tapete.png'
-import poltronaImg from '../../assets/Images/poltrona.png'
-import divaImg from '../../assets/Images/diva.png'
-import colchaoImg from '../../assets/Images/colchao.png'
+import sofaImg from '../../../../assets/Images/sofa.png'
+import carroImg from '../../../../assets/Images/carro.png'
+import puffImg from '../../../../assets/Images/puff.png'
+import carpeteImg from '../../../../assets/Images/carpete.png'
+import cadeiraImg from '../../../../assets/Images/cadeira.png'
+import tapeteImg from '../../../../assets/Images/tapete.png'
+import poltronaImg from '../../../../assets/Images/poltrona.png'
+import divaImg from '../../../../assets/Images/diva.png'
+import colchaoImg from '../../../../assets/Images/colchao.png'
 
 const imageMap: { [key: string]: string } = {
     "Sofá": sofaImg,

@@ -1,7 +1,7 @@
 import { FormBudget } from "../../components/FormBudget";
-import { Pagination } from "../../components/Pagination";
-import { Header } from "../Header";
-import { BackgroundColor, BackgroundWrapper, BackgroundWrapper1, BackgroundWrapper2, BackgroundWrapper3, BackgroundWrapper4, Blog, BlogPages, Budgets, CardContent, CleaningCardsContentHome, Contact, ContactCard, ContactCardIcons, Copy, Evidences, HomeContainer, TextAndButton, TextAndIcons, TextBudgets } from "./styles";
+import { Pagination } from "./components/Pagination";
+import { Header } from "../../components/Header";
+import { BackgroundColor, BackgroundWrapper, BackgroundWrapper1, BackgroundWrapper2, BackgroundWrapper3, BackgroundWrapper4, BlogHome, BlogPages, Budgets, CardContent, CleaningCardsContentHome, Contact, Copy, Evidences, HomeContainer, TextBudgets } from "./styles";
 
 import LogoImg from "../../assets/logo.svg"
 import { Card } from "./components/Card";
@@ -10,9 +10,26 @@ import { TextAndP } from "./components/TextAndP";
 import { YoutubeVideo } from "./components/YoutubeVideo";
 import { BlogCards } from "./components/BlogCards";
 import { FormContact } from "../../components/FormContact";
-import { FacebookLogo, InstagramLogo, Phone, WhatsappLogo, YoutubeLogo } from "@phosphor-icons/react";
+import { ContactInfo } from "../../components/ContactInfo";
+
+import { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export function Home() {
+    const contactRef = useRef<HTMLDivElement>(null);
+    const evidencesRef = useRef<HTMLDivElement>(null);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === '#contact' && contactRef.current) {
+            contactRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        if (location.hash === '#evidences' && evidencesRef.current) {
+            evidencesRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [location]);
+
     return (
         <>
             <BackgroundWrapper />
@@ -73,7 +90,7 @@ export function Home() {
                         colorTheme="dark-blue"
                     />
 
-                    <Evidences>
+                    <Evidences id="evidences" ref={evidencesRef}>
                         <YoutubeVideo />
 
                         <div>
@@ -82,7 +99,7 @@ export function Home() {
                         </div>
                     </Evidences>
 
-                    <Blog>
+                    <BlogHome>
                         <h1>Blog</h1>
 
                         <div>
@@ -91,35 +108,18 @@ export function Home() {
                             <BlogCards title="Limpeza Estofado" />
                         </div>
 
-                        <BlogPages>
+                        <BlogPages to="/blog">
                             VEJA MAIS
                         </BlogPages>
-                    </Blog>
+                    </BlogHome>
 
-                    <Contact>
+                    <Contact id="contact" ref={contactRef}>
                         <h1>Contato</h1>
 
                         <FormContact />
                     </Contact>
 
-                    <ContactCard>
-                        <TextAndIcons>
-                            <h1>Ligue agora</h1>
-                            <a><Phone size={24} />19 99256-4309</a>
-                            <ContactCardIcons>
-                                <button><FacebookLogo size={24} /></button>
-                                <button><InstagramLogo size={24} /></button>
-                                <button><YoutubeLogo size={24} /></button>
-                                <button><WhatsappLogo size={24} /></button>
-                            </ContactCardIcons>
-                        </TextAndIcons>
-
-                        <TextAndButton>
-                            <h1>Gostou?</h1>
-                            <p>Quer fazer um orçamento sem compromisso? Temos uma equipe qualificada para atendê-lo</p>
-                            <button>FAÇA UM ORÇAMENTO</button>
-                        </TextAndButton>
-                    </ContactCard>
+                    <ContactInfo bgColor="white-500" />
                 </Copy>
             </HomeContainer>
         </>

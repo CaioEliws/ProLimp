@@ -1,9 +1,9 @@
 import { ContactContainer, HeaderContainer, LinkBudgets, Links1, Links2, LinksPages, LinksSocial, LogoImage, NavContainer } from "./styles";
+import { Clipboard, FacebookLogo, InstagramLogo, WhatsappLogo, YoutubeLogo } from '@phosphor-icons/react';
+import logolimp from '../../assets/logo.svg';
+import { Button } from "../Button";
 
-import { Clipboard, FacebookLogo, InstagramLogo, WhatsappLogo, YoutubeLogo } from '@phosphor-icons/react'
-
-import logolimp from '../../assets/logo.svg'
-import { Button } from "../../components/Button";
+import { Link } from 'react-router-dom';
 
 export function Header() {
     return (
@@ -28,16 +28,16 @@ export function Header() {
                     </LinksSocial>
                 </Links2>
             </ContactContainer>
-            
+
             <NavContainer>
-                <LogoImage src={logolimp}/>
+                <LogoImage src={logolimp} />
 
                 <LinksPages>
-                    <a href="#">HOME</a>
-                    <a href="#">SERVIÇOS</a>
-                    <a href="#">DEPOIMENTOS</a>
-                    <a href="#">BLOG</a>
-                    <a href="#">CONTATO</a>
+                    <Link to="/">HOME</Link>
+                    <Link to="/services">SERVIÇOS</Link>
+                    <Link to="/#evidences">DEPOIMENTOS</Link>
+                    <Link to="/blog">BLOG</Link>
+                    <Link to="/#contact">CONTATO</Link>
                     
                     <Button title="QUERO UM ORÇAMENTO" />
                 </LinksPages>

@@ -3,7 +3,8 @@ import WallpaperImage from "./assets/wallpaper2.png"
 import WallpaperImage2 from "./assets/wallpaper3.png"
 import WallpaperImage3 from "./assets/wallpaper4.png"
 import WallpaperImage4 from "./assets/wallpaper5.png"
-import WallpaperImage5 from "./assets/wallpaper6.png"
+import CleaningWallpaper from "../../assets/ContactWallpaper.png"
+import { Link } from "react-router-dom";
 
 export const HomeContainer = styled.main`
     width: 100%;
@@ -78,7 +79,7 @@ export const Copy = styled.div`
     align-items: center;
     justify-content: center;
 
-    img {
+    > img {
         width: 30rem;
     }
 `;
@@ -134,11 +135,11 @@ export const BackgroundWrapper3 = styled.div`
 
 export const BackgroundWrapper4 = styled.div`
     position: absolute;
-    top: 3750px;
+    top: 6670px;
     left: 0;
     width: 100%;
-    height: 3300px;
-    background-image: url(${WallpaperImage5});
+    height: 420px;
+    background-image: url(${CleaningWallpaper});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -169,9 +170,11 @@ export const Evidences = styled.div`
             font-size: 1.6rem;
         }
     }
+
+    scroll-margin-top: 35rem;
 `;
 
-export const Blog = styled.div`
+export const BlogHome = styled.div`
     width: 100%;
     margin-top: 20rem;
 
@@ -195,9 +198,13 @@ export const Blog = styled.div`
     }
 `;
 
-export const BlogPages = styled.button`
+export const BlogPages = styled(Link)`
     width: 17rem;
     height: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     margin-top: 7rem;
 
@@ -235,116 +242,6 @@ export const Contact = styled.div`
         
         color: ${props => props.theme["blue-500"]};
     }
-`;
 
-export const ContactCard = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    padding: 5rem;
-    margin-top: 20rem;
-    border-radius: 16px;
-
-    background: ${props => props.theme["white-500"]};
-
-    h1 {
-        font-size: 5.6rem;
-
-        color: ${props => props.theme["blue-500"]};
-    }
-
-    p {
-        font-size: 2rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-
-        font-weight: 500;
-
-        svg {
-            color: ${props => props.theme["blue-500"]};
-        }
-    }
-
-    a {
-        width: 18rem;
-        display: flex;
-        align-items: center;
-
-        font-size: 2rem;
-        font-weight: 500;
-
-        gap: 1rem;
-        cursor: pointer;
-
-        svg {
-            color: ${props => props.theme["blue-500"]};
-        }
-    }
-`;
-
-export const TextAndIcons = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    gap: 4rem;
-`;
-
-export const TextAndButton = styled.div`
-    width: 50%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    gap: 2rem;
-
-    button {
-        width: 25rem;
-        height: 5rem;
-
-        margin-top: 1rem;
-
-        border: none;
-        background: ${props => props.theme["white-500"]};
-        color: ${props => props.theme["blue-500"]};
-
-        border-radius: 30px;
-        border: 3px solid ${props => props.theme["blue-500"]};
-
-        font-size: 1.6rem;
-        font-weight: 500;
-
-
-        cursor: pointer;
-        transition: .2s;
-
-        &:hover {
-            color: ${props => props.theme["white-500"]};
-            background: ${props => props.theme["blue-500"]};
-        }
-    }
-`;
-
-export const ContactCardIcons = styled.div`
-    display: flex;
-    gap: 2rem;
-
-    button {
-        display: flex;
-
-        background: transparent;
-        border: none;
-
-        cursor: pointer;
-        transition: .3s;
-
-        color: ${props => props.theme["blue-500"]};
-
-        &:hover {
-            transform: scale(1.2)
-        }
-    }
+    scroll-margin-top: 12rem;
 `;

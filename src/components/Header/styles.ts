@@ -107,6 +107,7 @@ export const LinksPages = styled.nav`
     position: relative;
 
     background: ${props => props.theme["white"]};
+    
     a {
         position: relative;
         color: ${props => props.theme["black"]};
