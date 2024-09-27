@@ -15,6 +15,10 @@ import { ContactInfo } from "../../components/ContactInfo";
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import CouroImage from "./components/BlogCards/Images/couro-image.jpg"
+import CarroImage from "./components/BlogCards/Images/carro-image.jpg"
+import CouroBrancoImage from "./components/BlogCards/Images/courobranco.jpg"
+
 export function Home() {
     const contactRef = useRef<HTMLDivElement>(null);
     const evidencesRef = useRef<HTMLDivElement>(null);
@@ -103,9 +107,9 @@ export function Home() {
                         <h1>Blog</h1>
 
                         <div>
-                            <BlogCards title="Couro Cuidados" />
-                            <BlogCards title="Limpeza Banco de Couro" />
-                            <BlogCards title="Limpeza Estofado" />
+                            <BlogCards title="Couro Cuidados" image={CouroImage} postId="couro-cuidados" />
+                            <BlogCards title="Limpeza Banco de Couro" image={CarroImage} postId="limpeza-banco-couro" />
+                            <BlogCards title="Limpeza Estofado" image={CouroBrancoImage} postId="limpeza-estofado" />
                         </div>
 
                         <BlogPages to="/blog">

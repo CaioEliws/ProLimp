@@ -1,46 +1,39 @@
 import { useEffect } from "react";
 
+import { BlogCards } from "../Home/components/BlogCards";
+import { BackgroundContactWallpaper, BlogContainer, BlogCardsContent } from "./styles";
 import { ContactInfo } from "../../components/ContactInfo";
 import { Header } from "../../components/Header";
-import { BlogCards } from "../Home/components/BlogCards";
-import { BackgroundContactWallpaper, BlogCardsContent, BlogContainer } from "./styles";
+
+import { blogPosts } from "../../data/blogData";
 
 export function Blog() {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-    return (
-        <>
-            <BackgroundContactWallpaper />
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-            <BlogContainer>
-                <Header />
+  return (
+    <>
+      <BackgroundContactWallpaper />
+      <BlogContainer>
+        <Header />
 
-                <h1>Blog</h1>
+        <h1>Blog</h1>
 
-                <BlogCardsContent>
-                    <BlogCards title="Couro Cuidados" />
-                    <BlogCards title="Limpeza Banco de Couro" />
-                    <BlogCards title="Limpeza Estofado" />
-                    
-                    <BlogCards title="Anti Pulga" />
-                    <BlogCards title="Estofado Limpo" />
-                    <BlogCards title="Evitar Limpar à Vácuo" />
+        <BlogCardsContent>
 
-                    <BlogCards title="Acessórios Vácuo" />
-                    <BlogCards title="Organização De Sapatos" />
-                    <BlogCards title="Tênis Branco" />
+          {blogPosts.map((post) => (
+            <BlogCards 
+              key={post.id} 
+              title={post.title} 
+              image={post.image} 
+              postId={post.id} />
+          ))}
 
-                    <BlogCards title="Limpeza Colchão" />
-                    <BlogCards title="Couro Hidratação" />
-            
-                    <BlogCards title="Couro Branco" />
-                    <BlogCards title="Piso Limpeza" />
-                    <BlogCards title="Estofado impermeabilizado" />
-                </BlogCardsContent>
+        </BlogCardsContent>
 
-                <ContactInfo bgColor="white-500" />
-            </BlogContainer>
-        </>
-    )
+        <ContactInfo bgColor="white-500" />
+      </BlogContainer>
+    </>
+  );
 }

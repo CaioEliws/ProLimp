@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const BlogCardsContainer = styled.a`
+import { Link } from "react-router-dom";
+
+export const BlogCardsContainer = styled(Link)`
     width: 35rem;
 
     background: ${props => props.theme["white-500"]};
