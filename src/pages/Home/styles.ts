@@ -110,7 +110,7 @@ export const BackgroundWrapper2 = styled.div`
     top: 3500px;
     left: 0;
     width: 100%;
-    height: 1100px;
+    height: 900px;
     background-image: url(${WallpaperImage3});
     background-size: cover;
     background-position: center;
@@ -120,22 +120,21 @@ export const BackgroundWrapper2 = styled.div`
 
 export const BackgroundWrapper3 = styled.div`
     position: absolute;
-    top: 3500px;
+    top: 4200px;
     left: 0;
     width: 100%;
-    height: 3550px;
+    height: 1100px;
     background-image: url(${WallpaperImage4});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -5;
-    background-size: 110%;
+    z-index: -3;
 
 `;
 
 export const BackgroundWrapper4 = styled.div`
     position: absolute;
-    top: 6670px;
+    top: 6180px;
     left: 0;
     width: 100%;
     height: 420px;

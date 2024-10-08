@@ -5,14 +5,18 @@ import { GlobalStyle } from "./styles/global"
 import { BrowserRouter } from "react-router-dom"
 import { AppRoutes } from "./routes/app.routes"
 
+import { SimulationProvider } from "./context/SimulationContext"
+
 export function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle />
-      
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
-    </ThemeProvider>
+    <SimulationProvider>
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyle />
+        
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </ThemeProvider>
+    </SimulationProvider>
   )
 }

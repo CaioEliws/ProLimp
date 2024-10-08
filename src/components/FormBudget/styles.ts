@@ -14,7 +14,7 @@ export const Form = styled.form`
     border-bottom-right-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
 
-    input, select {
+    input, select, textarea {
         width: 100%;
 
         padding: 1.2rem 2.4rem;

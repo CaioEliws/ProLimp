@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
 export const PagesImagesContainer = styled.div`
@@ -17,7 +19,7 @@ export const PagesImagesContainer = styled.div`
     }
 `;
 
-export const PageImageContent = styled.a`
+export const PageImageContent = styled(Link)`
     height: 100%;
 
     display: flex;

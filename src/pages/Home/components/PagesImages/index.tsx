@@ -29,9 +29,11 @@ interface PagesImages {
 export function PagesImages({ title }: PagesImages) {
     const imageSrc = imageMap[title];
 
+    const serviceRoute = `services/simulation/${title.toLowerCase().replace(/\s+/g, '-')}`;
+
     return (
         <PagesImagesContainer>
-            <PageImageContent href="#">
+            <PageImageContent to={serviceRoute}>
                 <PageImage>
                     <img src={imageSrc} alt="" />
                 </PageImage>

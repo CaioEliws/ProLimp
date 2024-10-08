@@ -1,13 +1,28 @@
 import { FormBudget } from "../../components/FormBudget";
 import { Pagination } from "./components/Pagination";
 import { Header } from "../../components/Header";
-import { BackgroundColor, BackgroundWrapper, BackgroundWrapper1, BackgroundWrapper2, BackgroundWrapper3, BackgroundWrapper4, BlogHome, BlogPages, Budgets, CardContent, CleaningCardsContentHome, Contact, Copy, Evidences, HomeContainer, TextBudgets } from "./styles";
+import { 
+    BackgroundColor, 
+    BackgroundWrapper, 
+    BackgroundWrapper1, 
+    BackgroundWrapper2, 
+    BackgroundWrapper3, 
+    BackgroundWrapper4, 
+    BlogHome, BlogPages, 
+    Budgets, CardContent, 
+    CleaningCardsContentHome, 
+    Contact, 
+    Copy, 
+    // Evidences, 
+    HomeContainer, 
+    TextBudgets 
+} from "./styles";
 
 import LogoImg from "../../assets/logo.svg"
 import { Card } from "./components/Card";
 import { CleaningCard } from "./components/CleaningCard";
 import { TextAndP } from "./components/TextAndP";
-import { YoutubeVideo } from "./components/YoutubeVideo";
+// import { YoutubeVideo } from "./components/YoutubeVideo";
 import { BlogCards } from "./components/BlogCards";
 import { FormContact } from "../../components/FormContact";
 import { ContactInfo } from "../../components/ContactInfo";
@@ -88,7 +103,7 @@ export function Home() {
                         />
                     </CleaningCardsContentHome>
 
-                    <TextAndP 
+                    {/* <TextAndP 
                         title="Depoimentos"
                         description="A ProLimp fez mais um ótimo serviço para uma cliente, por isso recebemos mais um depoimento feliz."
                         colorTheme="dark-blue"
@@ -101,7 +116,7 @@ export function Home() {
                             <h1>Adriano Pimenta</h1>
                             <p>“Eu estava precisando de higienização para sofás e poltronas na Leo Madeiras. Conhecemos a ProLimp que nos ajudou bastante, fez um trabalho fantástico e profissional. Inclusive aproveitei para fazer a limpeza do meu carro. Muito Obrigado ProLimp, eu recomendo!”</p>
                         </div>
-                    </Evidences>
+                    </Evidences> */}
 
                     <BlogHome>
                         <h1>Blog</h1>

@@ -2,17 +2,19 @@ import { FormEvent, useState } from "react";
 import { Button } from "../Button";
 import { Form, Title } from "./styles";
 
-import emailJs from "@emailjs/browser"
+import emailJs from "@emailjs/browser";
 
 interface FormBudgetProps {
     title: string;
+    hasTextArea?: boolean;
 }
 
-export function FormBudget({ title }: FormBudgetProps) {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [tel, setTel] = useState('')
+export function FormBudget({ title, hasTextArea }: FormBudgetProps) {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [tel, setTel] = useState('');
     const [service, setService] = useState<string>('Limpeza');
+    const [textAreaValue, setTextAreaValue] = useState('');
 
     function sendEmail(event: FormEvent) {
         event.preventDefault();
@@ -21,24 +23,25 @@ export function FormBudget({ title }: FormBudgetProps) {
             from_name: name,
             email: email,
             tel: tel,
-            service: service,
-        }
+            service: hasTextArea ? textAreaValue : service,
+        };
 
         emailJs.send("service_53kwuwe", "template_kh6ps97", templateParams, "ZzJTBA1rxuHC4Or-Y")
-        .then((response) => {
-            console.log("Email Enviado!", response.status, response.text)
-            setName('')
-            setEmail('')
-            setTel('')
-            setService('Limpeza');
-        }, (error) => {
-            console.log("ERROR: ", error)
-        })
+            .then((response) => {
+                console.log("Email Enviado!", response.status, response.text);
+                setName('');
+                setEmail('');
+                setTel('');
+                setService('Limpeza');
+                setTextAreaValue('');
+            }, (error) => {
+                console.log("ERROR: ", error);
+            });
     }
 
     return (
-        <Form onSubmit={sendEmail} >
-            <Title>{ title }</Title>
+        <Form onSubmit={sendEmail}>
+            <Title>{title}</Title>
 
             <input 
                 type="text" 
@@ -61,18 +64,28 @@ export function FormBudget({ title }: FormBudgetProps) {
                 value={tel}
                 required
             />
-            <select
-                value={service} 
-                onChange={(e) => setService(e.target.value)} 
-                required
-            >
-                <option value="Limpeza">Limpeza</option>
-                <option value="Impermeabilização">Impermeabilização</option>
-                <option value="Limpeza Completa">Limpeza Completa</option>
-                <option value="Meia Limpeza">Meia Limpeza</option>
-            </select>
+
+            {hasTextArea ? (
+                <textarea
+                    placeholder="Digite sua mensagem ou descrição do serviço"
+                    onChange={(e) => setTextAreaValue(e.target.value)}
+                    value={textAreaValue}
+                    required
+                />
+            ) : (
+                <select
+                    value={service} 
+                    onChange={(e) => setService(e.target.value)} 
+                    required
+                >
+                    <option value="Limpeza">Limpeza</option>
+                    <option value="Impermeabilização">Impermeabilização</option>
+                    <option value="Limpeza Completa">Limpeza Completa</option>
+                    <option value="Meia Limpeza">Meia Limpeza</option>
+                </select>
+            )}
 
             <Button title="Enviar" type="submit" />
         </Form>
-    )
+    );
 }

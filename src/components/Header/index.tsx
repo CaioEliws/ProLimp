@@ -1,5 +1,5 @@
-import { ContactContainer, HeaderContainer, LinkBudgets, Links1, Links2, LinksPages, LinksSocial, LogoImage, NavContainer } from "./styles";
-import { Clipboard, FacebookLogo, InstagramLogo, WhatsappLogo, YoutubeLogo } from '@phosphor-icons/react';
+import { ContactContainer, HeaderContainer, Links1, Links2, LinksPages, LinksSocial, LogoImage, NavContainer } from "./styles";
+import { FacebookLogo, InstagramLogo, WhatsappLogo, YoutubeLogo } from '@phosphor-icons/react';
 import logolimp from '../../assets/logo.svg';
 import { Button } from "../Button";
 
@@ -10,21 +10,21 @@ export function Header() {
         <HeaderContainer>
             <ContactContainer>
                 <Links1>
-                    <a href="#">19 99256-4309</a>
+                    <a href="#">19 99889-6166</a>
                     <a href="#">somosprolimp@gmail.com</a>
                 </Links1>
 
                 <Links2>
-                    <LinkBudgets href="#">
+                    {/* <LinkBudgets href="#">
                         <Clipboard size={24} />
                         Lista de Orçamento
-                    </LinkBudgets>
+                    </LinkBudgets> */}
 
                     <LinksSocial>
-                        <button><FacebookLogo size={24} /></button>
-                        <button><InstagramLogo size={24} /></button>
-                        <button><YoutubeLogo size={24} /></button>
-                        <button><WhatsappLogo size={24} /></button>
+                        <a><FacebookLogo size={24}/></a>
+                        <a href="https://www.instagram.com/_.prolimp/" target="_blank"><InstagramLogo size={24}/></a>
+                        <a><YoutubeLogo size={24}/></a>
+                        <a href="https://wa.me/5519998896166" target="_blank"><WhatsappLogo size={24}/></a>
                     </LinksSocial>
                 </Links2>
             </ContactContainer>
@@ -35,11 +35,14 @@ export function Header() {
                 <LinksPages>
                     <Link to="/">HOME</Link>
                     <Link to="/services">SERVIÇOS</Link>
-                    <Link to="/#evidences">DEPOIMENTOS</Link>
+                    {/* <Link to="/#evidences">DEPOIMENTOS</Link> */}
                     <Link to="/blog">BLOG</Link>
                     <Link to="/#contact">CONTATO</Link>
                     
-                    <Button title="QUERO UM ORÇAMENTO" />
+                    <Button 
+                        title="QUERO UM ORÇAMENTO" 
+                        link="https://wa.me/5519998896166?text=Olá gostaria de fazer um orçamento"
+                    />
                 </LinksPages>
             </NavContainer>
         </HeaderContainer>

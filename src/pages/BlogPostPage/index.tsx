@@ -7,18 +7,18 @@ import { useEffect } from "react";
 interface BlogPostContent {
   subtitle: string;
   text: string;
-  imageText: string;
+  imageText?: string;
 }
 
 interface BlogPostProps {
+  id: string;
   title: string;
   content: BlogPostContent[];
   image: string;
 }
 
-export function BlogPost({ title, content, image }: BlogPostProps) {
+export function BlogPostPage({ title, content, image }: BlogPostProps) {
   useEffect(() => {
-    // Faz o scroll para o topo quando o componente é montado
     window.scrollTo(0, 0);
   }, []);
 

@@ -31,8 +31,15 @@ export const ContactInfoContainer = styled.div`
             color: ${props => props.theme["blue-500"]};
         }
     }
+`;
 
-    a {
+export const TextAndIcons = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    gap: 4rem;
+
+    > a {
         width: 18rem;
         display: flex;
         align-items: center;
@@ -49,18 +56,11 @@ export const ContactInfoContainer = styled.div`
     }
 `;
 
-export const TextAndIcons = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    gap: 4rem;
-`;
-
 export const ContactCardIcons = styled.div`
     display: flex;
     gap: 2rem;
 
-    button {
+    a {
         display: flex;
 
         background: transparent;
@@ -87,9 +87,14 @@ export const TextAndButton = styled.div`
 
     gap: 2rem;
 
-    button {
+    a {
         width: 25rem;
         height: 5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
 
         margin-top: 1rem;
 

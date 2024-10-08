@@ -5,7 +5,7 @@ import { BackgroundContactWallpaper, BlogContainer, BlogCardsContent } from "./s
 import { ContactInfo } from "../../components/ContactInfo";
 import { Header } from "../../components/Header";
 
-import { blogPosts } from "../../data/blogData";
+import { blogPostsData } from "../../data/blogPostsData";
 
 export function Blog() {
   useEffect(() => {
@@ -22,7 +22,7 @@ export function Blog() {
 
         <BlogCardsContent>
 
-          {blogPosts.map((post) => (
+          {blogPostsData.map((post) => (
             <BlogCards 
               key={post.id} 
               title={post.title} 

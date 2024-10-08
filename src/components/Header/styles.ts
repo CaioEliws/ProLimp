@@ -59,7 +59,7 @@ export const LinksSocial = styled.div`
     display: flex;
     gap: 2rem;
 
-    button {
+    a {
         display: flex;
 
         background: transparent;

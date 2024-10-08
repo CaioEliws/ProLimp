@@ -39,10 +39,13 @@ export function ServicesCard({ title }: ServicesCardProps) {
         "Carpete": CarpeteImg,
     };
 
-    const img = imagesMap[title] || CarroImg; // Usa CarroImg como fallback se o título não for encontrado
+    const img = imagesMap[title] || CarroImg;
+
+    const serviceRoute = `/services/simulation/${title.replace(/Limpeza de /, '').replace(/ /g, "-").toLowerCase()}`;
+
 
     return (
-        <ServicesCardContainer href="#">
+        <ServicesCardContainer to={serviceRoute}>
             <img src={img} alt={title} />
             <h2>{title}</h2>
         </ServicesCardContainer>
