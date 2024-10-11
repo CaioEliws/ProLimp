@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import CleaningWallpaper from "../../assets/ContactWallpaper.png"
-
 export const BlogContainer = styled.div`
     width: 100%;
     max-width: 1120px;
@@ -20,6 +18,19 @@ export const BlogContainer = styled.div`
         margin-bottom: 5rem;
 
         color: ${props => props.theme["blue-500"]};
+
+        @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+            text-align: center;
+            margin-top: 0rem;
+        }
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 `;
 
@@ -29,17 +40,12 @@ export const BlogCardsContent = styled.div`
     gap: 3rem;
 
     justify-items: center;
-`;
 
-export const BackgroundContactWallpaper = styled.div`
-    position: absolute;
-    top: 2650px;
-    left: 0;
-    width: 100%;
-    height: 420px;
-    background-image: url(${CleaningWallpaper});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 `;

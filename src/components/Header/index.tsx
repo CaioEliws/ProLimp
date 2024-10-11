@@ -1,11 +1,34 @@
-import { ContactContainer, HeaderContainer, Links1, Links2, LinksPages, LinksSocial, LogoImage, NavContainer } from "./styles";
-import { FacebookLogo, InstagramLogo, WhatsappLogo, YoutubeLogo } from '@phosphor-icons/react';
+import { useState } from 'react';
+import { 
+    ContactContainer, 
+    HeaderContainer, 
+    Links1, 
+    Links2, 
+    LinksPages, 
+    LinksSocial, 
+    LogoImage, 
+    NavContainer, 
+    MenuButton 
+} from "./styles";
+import { 
+    FacebookLogo, 
+    InstagramLogo, 
+    WhatsappLogo, 
+    YoutubeLogo, 
+    List,
+    X 
+} from '@phosphor-icons/react';
 import logolimp from '../../assets/logo.svg';
 import { Button } from "../Button";
-
 import { Link } from 'react-router-dom';
 
 export function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(prev => !prev);
+    };
+
     return (
         <HeaderContainer>
             <ContactContainer>
@@ -15,11 +38,6 @@ export function Header() {
                 </Links1>
 
                 <Links2>
-                    {/* <LinkBudgets href="#">
-                        <Clipboard size={24} />
-                        Lista de Orçamento
-                    </LinkBudgets> */}
-
                     <LinksSocial>
                         <a><FacebookLogo size={24}/></a>
                         <a href="https://www.instagram.com/_.prolimp/" target="_blank"><InstagramLogo size={24}/></a>
@@ -31,11 +49,14 @@ export function Header() {
 
             <NavContainer>
                 <LogoImage src={logolimp} />
+                
+                <MenuButton onClick={toggleMenu}>
+                    {isMenuOpen ? <X size={24}/> : <List size={24}/>}
+                </MenuButton>
 
-                <LinksPages>
+                <LinksPages $isOpen={isMenuOpen}>
                     <Link to="/">HOME</Link>
                     <Link to="/services">SERVIÇOS</Link>
-                    {/* <Link to="/#evidences">DEPOIMENTOS</Link> */}
                     <Link to="/blog">BLOG</Link>
                     <Link to="/#contact">CONTATO</Link>
                     

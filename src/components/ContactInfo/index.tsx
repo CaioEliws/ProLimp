@@ -1,5 +1,5 @@
 import { FacebookLogo, InstagramLogo, Phone, WhatsappLogo, YoutubeLogo } from "@phosphor-icons/react";
-import { ContactCardIcons, ContactInfoContainer, TextAndButton, TextAndIcons } from "./styles";
+import { BackgroundWrapper4, ContactCardIcons, ContactInfoContainer, TextAndButton, TextAndIcons } from "./styles";
 
 interface ContactInfoProps {
     bgColor: "white" | "white-500";
@@ -11,13 +11,15 @@ export function ContactInfo({ bgColor }: ContactInfoProps) {
             <ContactInfoContainer color={bgColor}>
                 <TextAndIcons>
                     <h1>Ligue agora</h1>
-                    <a><Phone size={24} />19 99889-6166</a>
-                        <ContactCardIcons>
-                            <a><FacebookLogo size={24}/></a>
-                            <a href="https://www.instagram.com/_.prolimp/" target="_blank"><InstagramLogo size={24}/></a>
-                            <a><YoutubeLogo size={24}/></a>
-                            <a href="https://wa.me/5519998896166" target="_blank"><WhatsappLogo size={24}/></a>
-                        </ContactCardIcons>
+                    <div id="divLinkPhone">
+                        <a><Phone size={24} />19 99889-6166</a>
+                    </div>
+                    <ContactCardIcons>
+                        <a><FacebookLogo size={24}/></a>
+                        <a href="https://www.instagram.com/_.prolimp/" target="_blank"><InstagramLogo size={24}/></a>
+                        <a><YoutubeLogo size={24}/></a>
+                        <a href="https://wa.me/5519998896166" target="_blank"><WhatsappLogo size={24}/></a>
+                    </ContactCardIcons>
                 </TextAndIcons>
 
                 <TextAndButton>
@@ -28,6 +30,8 @@ export function ContactInfo({ bgColor }: ContactInfoProps) {
                     </a>
                 </TextAndButton>
             </ContactInfoContainer>
+
+            <BackgroundWrapper4 />
         </>
-    )
+    );
 }

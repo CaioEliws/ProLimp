@@ -1,4 +1,4 @@
-import { BackgroundContactWallpaper, BackgroundWrapper, BlogPostContainer, BlogPostContent, PostContent } from "./styles";
+import { BackgroundWrapper, BlogPostContainer, BlogPostContent, PostContent } from "./styles";
 
 import { Header } from "../../components/Header";
 import { ContactInfo } from "../../components/ContactInfo";
@@ -24,7 +24,7 @@ export function BlogPostPage({ title, content, image }: BlogPostProps) {
 
   return (
     <>
-      <BackgroundContactWallpaper />
+      {/* <BackgroundContactWallpaper /> */}
       <BackgroundWrapper />
 
       <BlogPostContainer>
@@ -52,8 +52,10 @@ export function BlogPostPage({ title, content, image }: BlogPostProps) {
             ))
           }
         </BlogPostContent>
-
-        <ContactInfo bgColor="white" />
+        
+        <div className="content">
+          <ContactInfo bgColor="white" />
+        </div>
       </BlogPostContainer>
     </>
   );

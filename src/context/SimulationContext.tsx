@@ -3,6 +3,7 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 interface SimulationContextType {
     accumulatorPrice: number;
     selectedService: number | null;
+    selectedServiceName: string | null;
     imagePrice: number | null;
     quantity: number; // Adicionando estado para a quantidade
     isResultVisible: boolean;
@@ -17,13 +18,14 @@ const SimulationContext = createContext<SimulationContextType | undefined>(undef
 export const SimulationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [accumulatorPrice, setAccumulatorPrice] = useState<number>(0);
     const [selectedService, setSelectedService] = useState<number | null>(null);
+    const [selectedServiceName, setSelectedServiceName] = useState<string | null>(null); // Adicionando o nome do serviço
     const [imagePrice, setImagePrice] = useState<number | null>(null);
-    const [quantity, setQuantity] = useState<number>(1); // Inicializando a quantidade
+    const [quantity, setQuantity] = useState<number>(1);
     const [isResultVisible, setIsResultVisible] = useState<boolean>(false);
 
     useEffect(() => {
         if (imagePrice !== null) {
-            let finalPrice = imagePrice * quantity; // Multiplicando pelo valor da quantidade
+            let finalPrice = imagePrice * quantity;
 
             if (selectedService === 3) {
                 finalPrice += imagePrice * 0.4;
@@ -33,7 +35,7 @@ export const SimulationProvider: React.FC<{ children: React.ReactNode }> = ({ ch
 
             setAccumulatorPrice(finalPrice);
         }
-    }, [imagePrice, selectedService, quantity]); // Adicionando quantity como dependência
+    }, [imagePrice, selectedService, quantity]);
 
     const handlePriceSelect = (price: number | null) => {
         setImagePrice(price);
@@ -48,9 +50,10 @@ export const SimulationProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         else if (serviceType === "Limpeza + Hidratação de couro") serviceIndex = 4;
 
         setSelectedService(serviceIndex);
+        setSelectedServiceName(serviceType); // Armazenando o nome do serviço
     };
 
-    const handleQuantityChange = (quantity: number) => { // Função para atualizar a quantidade
+    const handleQuantityChange = (quantity: number) => {
         setQuantity(quantity);
     };
 
@@ -62,18 +65,20 @@ export const SimulationProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         <SimulationContext.Provider value={{
             accumulatorPrice,
             selectedService,
+            selectedServiceName, // Passando o nome do serviço no contexto
             imagePrice,
             quantity,
             isResultVisible,
             handlePriceSelect,
             handleServiceSelect,
-            handleQuantityChange, // Adicionando a função ao contexto
+            handleQuantityChange,
             handleSimulateClick
         }}>
             {children}
         </SimulationContext.Provider>
     );
 };
+
 
 export const useSimulation = () => {
     const context = useContext(SimulationContext);

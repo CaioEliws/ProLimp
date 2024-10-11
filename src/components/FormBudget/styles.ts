@@ -13,6 +13,10 @@ export const Form = styled.form`
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    
+    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        width: 30rem;
+    }
 
     input, select, textarea {
         width: 100%;

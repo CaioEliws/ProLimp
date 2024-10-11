@@ -25,4 +25,10 @@ export const CardContainer = styled.div`
         text-align: center;
         font-size: 1.6rem;
     }
+    
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        margin-top: 5rem;
+
+        margin-bottom: 0rem;
+    }
 `;

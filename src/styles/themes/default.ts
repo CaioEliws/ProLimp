@@ -8,4 +8,9 @@ export const defaultTheme = {
     'blue-100': '#26acd8',
     'blue-500': '#0f4974',
     'blue-800': '#0e283c',
+
+    breakpoints: {
+        mobile: '425px',
+        tablet: '1050px',
+    },
 } as const;

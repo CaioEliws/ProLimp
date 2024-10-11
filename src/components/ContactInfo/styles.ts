@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import CleaningWallpaper from "../../assets/ContactWallpaper.png"
+
 export const ContactInfoContainer = styled.div`
     width: 100%;
     display: flex;
@@ -31,6 +33,15 @@ export const ContactInfoContainer = styled.div`
             color: ${props => props.theme["blue-500"]};
         }
     }
+
+    @media (max-width: 425px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        gap: 5rem;
+    }
 `;
 
 export const TextAndIcons = styled.div`
@@ -54,6 +65,29 @@ export const TextAndIcons = styled.div`
             color: ${props => props.theme["blue-500"]};
         }
     }
+
+    #divLinkPhone {
+        @media (max-width: 425px) {
+            display: flex;
+            justify-content: center;
+        }
+
+        a {
+            width: 18rem;
+            display: flex;
+            align-items: center;
+
+            font-size: 2rem;
+            font-weight: 500;
+
+            gap: 1rem;
+            cursor: pointer;
+
+            svg {
+                color: ${props => props.theme["blue-500"]};
+            }
+        }
+    }
 `;
 
 export const ContactCardIcons = styled.div`
@@ -74,6 +108,10 @@ export const ContactCardIcons = styled.div`
         &:hover {
             transform: scale(1.2)
         }
+    }
+
+    @media (max-width: 425px) {
+        justify-content: center;
     }
 `;
 
@@ -117,4 +155,17 @@ export const TextAndButton = styled.div`
             background: ${props => props.theme["blue-500"]};
         }
     }
+`;
+
+export const BackgroundWrapper4 = styled.div`
+    position: relative;
+    width: 99.2vw;
+    height: 420px;
+    background-image: url(${CleaningWallpaper});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    margin-top: -25rem;
 `;

@@ -16,14 +16,22 @@ export const GlobalStyle = createGlobalStyle`
         box-shadow: 0 0 0 2px ${props => props.theme["blue-100"]};
     }
 
+    html, body {
+        height: 100%;
+    }
+
     body {
         background-color: ${props => props.theme["white"]};
         color: ${props => props.theme["black"]};
-        -webkit-font-smoothing: antialised;
+        --webkit-font-smoothing: antialised;
     }
 
     html, body, input, textarea, button, select {
         font: 400 1.6rem Montserrat, sans-serif;
+
+        @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+            padding: 0 20px;
+        }
     }
 
     a {

@@ -15,6 +15,14 @@ export const TypeServicesContent = styled.div`
     gap: 1rem;
 
     margin-top: 2rem;
+
+    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        flex-direction: column;
+    }
+
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        flex-direction: column;
+    }
 `;
 
 export const ServiceInput = styled.input<ServiceInputProps>`

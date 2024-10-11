@@ -31,6 +31,10 @@ export const Form = styled.form`
         width: 100%;
         display: flex;
         gap: 5rem;
+
+        @media (max-width: 425px) {
+            flex-direction: column;
+        }
     }
 
     textarea {

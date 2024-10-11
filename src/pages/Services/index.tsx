@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { ContactInfo } from "../../components/ContactInfo";
 import { Header } from "../../components/Header";
 import { ServicesCard } from "./components/ServicesCard";
-import { BackgroundContactWallpaper, BackgroundWrapper, ServicesCardContent, ServicesContainer } from "./styles";
+import { BackgroundWrapper, ServicesCardContent, ServicesContainer } from "./styles";
 
 export function Services() {
     useEffect(() => {
@@ -11,8 +11,6 @@ export function Services() {
     return (
         <>
             <BackgroundWrapper />
-            <BackgroundContactWallpaper />
-
             <ServicesContainer>
                 <Header />
 
@@ -23,7 +21,7 @@ export function Services() {
                     <ServicesCard title="Limpeza de Cadeira" />
                     <ServicesCard title="Limpeza de Colchão" />
 
-                    <ServicesCard title="Limpeza de Tapete (m²)" />
+                    <ServicesCard title="Limpeza de Tapete" />
                     <ServicesCard title="Limpeza de Divã" />
                     <ServicesCard title="Limpeza de Carro" />
 
@@ -33,7 +31,9 @@ export function Services() {
                     <ServicesCard title="Carpete" />
                 </ServicesCardContent>
 
-                <ContactInfo bgColor="white" />
+                <div className="content">
+                    <ContactInfo bgColor="white" />
+                </div>
             </ServicesContainer>
         </>
     )

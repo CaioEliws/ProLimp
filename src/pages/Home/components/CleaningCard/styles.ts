@@ -9,9 +9,20 @@ export const CleaningCardContent = styled.main`
     display: flex;
     align-items: center;
 
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        flex-direction: column;
+    }
+
     img {
         width: 50rem;
         border-radius: 16px;
+
+        @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+            width: 100%;
+
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
     }
 
     div {
@@ -24,6 +35,13 @@ export const CleaningCardContent = styled.main`
 
         background: ${props => props.theme["white-500"]};
         padding: 2rem;
+
+        @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+            width: 100%;
+
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
 
         h1 {
             font-size: 2.4rem;
@@ -40,6 +58,18 @@ export const CleaningCardContent = styled.main`
 
             color: ${props => props.theme["blue-500"]};
             font-weight: 500;
+        }
+
+        @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+            p {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+            p {
+                font-size: 1.2rem;
+            }
         }
     }
 `;

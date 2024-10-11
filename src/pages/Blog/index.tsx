@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { BlogCards } from "../Home/components/BlogCards";
-import { BackgroundContactWallpaper, BlogContainer, BlogCardsContent } from "./styles";
+import { BlogContainer, BlogCardsContent } from "./styles";
 import { ContactInfo } from "../../components/ContactInfo";
 import { Header } from "../../components/Header";
 
@@ -13,8 +13,7 @@ export function Blog() {
   }, []);
 
   return (
-    <>
-      <BackgroundContactWallpaper />
+    <>      
       <BlogContainer>
         <Header />
 
@@ -32,7 +31,9 @@ export function Blog() {
 
         </BlogCardsContent>
 
-        <ContactInfo bgColor="white-500" />
+        <div className="content">
+          <ContactInfo bgColor="white-500" />
+        </div>
       </BlogContainer>
     </>
   );

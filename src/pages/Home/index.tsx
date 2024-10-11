@@ -6,8 +6,8 @@ import {
     BackgroundWrapper, 
     BackgroundWrapper1, 
     BackgroundWrapper2, 
-    BackgroundWrapper3, 
-    BackgroundWrapper4, 
+    BackgroundWrapper3,
+    BlogCardsContainer, 
     BlogHome, BlogPages, 
     Budgets, CardContent, 
     CleaningCardsContentHome, 
@@ -54,8 +54,6 @@ export function Home() {
             <BackgroundWrapper />
             <BackgroundWrapper1 />
             <BackgroundWrapper2 />
-            <BackgroundWrapper3 />
-            <BackgroundWrapper4 />
             <BackgroundColor />
             <HomeContainer>
                 <Header />
@@ -79,7 +77,7 @@ export function Home() {
                     <TextAndP 
                         title="Serviço de Limpeza para Sofás e Estofados em Indaiatuba"
                         description="Somos experts em limpeza de sofás e estofados. Realizamos uma limpeza profunda, incluindo impermeabilização e hidratação de couro para sofás, colchões, cadeiras, tapetes, poltronas e veículos. Garantimos a qualidade de nossos serviços."
-                        colorTheme="light-blue"
+                        $colorTheme="light-blue"
                     />
 
                     <CardContent>
@@ -121,16 +119,18 @@ export function Home() {
                     <BlogHome>
                         <h1>Blog</h1>
 
-                        <div>
+                        <BlogCardsContainer>
                             <BlogCards title="Couro Cuidados" image={CouroImage} postId="couro-cuidados" />
                             <BlogCards title="Limpeza Banco de Couro" image={CarroImage} postId="limpeza-banco-couro" />
                             <BlogCards title="Limpeza Estofado" image={CouroBrancoImage} postId="limpeza-estofado" />
-                        </div>
+                        </BlogCardsContainer>
 
                         <BlogPages to="/blog">
                             VEJA MAIS
                         </BlogPages>
                     </BlogHome>
+                    
+                    <BackgroundWrapper3 />
 
                     <Contact id="contact" ref={contactRef}>
                         <h1>Contato</h1>

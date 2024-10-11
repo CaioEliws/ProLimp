@@ -18,6 +18,10 @@ export const ContactContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 425px) {
+    display: none;
+  }
 `;
 
 export const Links1 = styled.div`
@@ -55,25 +59,6 @@ export const LinkBudgets = styled.a`
     }
 `;
 
-export const LinksSocial = styled.div`
-    display: flex;
-    gap: 2rem;
-
-    a {
-        display: flex;
-
-        background: transparent;
-        border: none;
-
-        cursor: pointer;
-        transition: .3s;
-
-        &:hover {
-            transform: scale(1.2)
-        }
-    }
-`;
-
 export const NavContainer = styled.div`
     width: 100%;
     height: 8rem;
@@ -92,6 +77,10 @@ export const NavContainer = styled.div`
 
     background-color: ${props => props.theme["white"]};
     border-bottom: 1px solid ${props => props.theme["blue-100"]};
+
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        max-width: 100%;
+    }
 `;
 
 export const LogoImage = styled.img`
@@ -99,7 +88,22 @@ export const LogoImage = styled.img`
   height: 80px;
 `;
 
-export const LinksPages = styled.nav`
+export const MenuButton = styled.button`
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: 425px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+`;
+
+export const LinksPages = styled.nav.attrs<{ $isOpen: boolean }>(({ $isOpen }) => ({
+    $isOpen: $isOpen ? true : undefined
+}))<{ $isOpen: boolean }>`
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -107,7 +111,25 @@ export const LinksPages = styled.nav`
     position: relative;
 
     background: ${props => props.theme["white"]};
-    
+
+    @media (max-width: 425px) {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: ${props => props.theme["white"]};
+        border: 1px solid ${props => props.theme["blue-100"]};
+        display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
+        z-index: 1000;
+
+        padding: 24px;
+
+        > button {
+            width: 100%;
+        }
+    }
+
     a {
         position: relative;
         color: ${props => props.theme["black"]};
@@ -136,5 +158,29 @@ export const LinksPages = styled.nav`
 
     button {
         margin-left: 5rem;
+
+        @media (max-width: 425px) {
+            margin-left: 0rem;
+        }
+    }
+`;
+
+
+export const LinksSocial = styled.div`
+    display: flex;
+    gap: 2rem;
+
+    a {
+        display: flex;
+
+        background: transparent;
+        border: none;
+
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            transform: scale(1.2)
+        }
     }
 `;

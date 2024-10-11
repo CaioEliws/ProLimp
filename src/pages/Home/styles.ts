@@ -3,16 +3,19 @@ import WallpaperImage from "./assets/wallpaper2.png"
 import WallpaperImage2 from "./assets/wallpaper3.png"
 import WallpaperImage3 from "./assets/wallpaper4.png"
 import WallpaperImage4 from "./assets/wallpaper5.png"
-import CleaningWallpaper from "../../assets/ContactWallpaper.png"
 import { Link } from "react-router-dom";
 
 export const HomeContainer = styled.main`
     width: 100%;
-    height: 700vh;
+    height: auto;
     max-width: 1120px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
+
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        height: auto;
+    }
 `;
 
 export const BackgroundWrapper = styled.div`
@@ -27,6 +30,11 @@ export const BackgroundWrapper = styled.div`
     background-repeat: no-repeat;
     z-index: -1;
     margin-top: 80px;
+
+    @media (max-width: 425px) {
+        margin-top: 2px;
+        height: 500px;
+    }
 `;
 
 export const Budgets = styled.div`
@@ -35,6 +43,14 @@ export const Budgets = styled.div`
 
     margin-top: 10rem;
     margin-bottom: 22rem;
+
+    @media (max-width: 425px) {
+        flex-direction: column;
+        align-items: center;
+
+        margin-top: 0rem;
+        margin-bottom: 5rem;
+    }
 `;
 
 export const TextBudgets = styled.div`
@@ -53,6 +69,13 @@ export const TextBudgets = styled.div`
         font-size: 2rem;
         font-weight: 600;
         color: ${props => props.theme["blue-800"]};
+    }
+
+    @media (max-width: 425px) {
+        width: 100%;
+        margin-bottom: 5rem;
+
+        margin-top: 30rem;
     }
 `;
 
@@ -81,6 +104,14 @@ export const Copy = styled.div`
 
     > img {
         width: 30rem;
+
+        @media (max-width: 425px) {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        margin-top: 5rem;
     }
 `;
 
@@ -95,10 +126,17 @@ export const BackgroundColor = styled.div`
 `;
 
 export const CardContent = styled.div`
+    width: 100%;
     display: flex;
     justify-content: space-around;
     
     gap: 3rem;
+
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 export const CleaningCardsContentHome = styled.div`
@@ -115,34 +153,11 @@ export const BackgroundWrapper2 = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -4;
-`;
+    z-index: -1;
 
-export const BackgroundWrapper3 = styled.div`
-    position: absolute;
-    top: 4200px;
-    left: 0;
-    width: 100%;
-    height: 1100px;
-    background-image: url(${WallpaperImage4});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -3;
-
-`;
-
-export const BackgroundWrapper4 = styled.div`
-    position: absolute;
-    top: 6180px;
-    left: 0;
-    width: 100%;
-    height: 420px;
-    background-image: url(${CleaningWallpaper});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -7;
+    /* @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        top: 4200px;
+    } */
 `;
 
 export const Evidences = styled.div`
@@ -181,19 +196,54 @@ export const BlogHome = styled.div`
     flex-direction: column;
     align-items: center;
 
-    div {
-        display: flex;
-        justify-content: space-between;
-
-        margin-top: 5rem;
-        gap: 3rem;
-    }
-
     h1 {
         font-size: 5.6rem;
         text-align: center;
-        
         color: ${props => props.theme["blue-100"]};
+    }
+
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        margin-top: -10rem;
+    }
+`;
+
+export const BackgroundWrapper3 = styled.div`
+    position: relative;
+    width: 99.2vw;
+    height: 900px;
+    background-image: url(${WallpaperImage4});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    margin-top: -80rem;
+
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        margin-top: -150rem;
+        height: 1850px;
+    }
+`;
+
+export const BlogCardsContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 5rem;
+    gap: 3rem;
+
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 20px;
+    }
+
+    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        margin: 20px;
     }
 `;
 
@@ -243,4 +293,8 @@ export const Contact = styled.div`
     }
 
     scroll-margin-top: 12rem;
+
+    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
+        margin-top: -15rem;
+    }
 `;

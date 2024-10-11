@@ -16,7 +16,7 @@ interface ServicesCardProps {
       | "Limpeza de Sofá" 
       | "Limpeza de Cadeira" 
       | "Limpeza de Colchão" 
-      | "Limpeza de Tapete (m²)" 
+      | "Limpeza de Tapete" 
       | "Limpeza de Carro" 
       | "Limpeza de Divã" 
       | "Limpeza de Poltrona" 
@@ -30,7 +30,7 @@ export function ServicesCard({ title }: ServicesCardProps) {
         "Limpeza de Sofá": SofaImg,
         "Limpeza de Cadeira": CadeiraImg,
         "Limpeza de Colchão": ColchaoImg,
-        "Limpeza de Tapete (m²)": TapeteImg,
+        "Limpeza de Tapete": TapeteImg,
         "Limpeza de Carro": CarroImg,
         "Limpeza de Divã": DivaImg,
         "Limpeza de Poltrona": PoltronaImg,

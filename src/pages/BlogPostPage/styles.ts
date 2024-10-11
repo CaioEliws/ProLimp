@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import CleaningWallpaper from "../../assets/ContactWallpaper.png"
+// import CleaningWallpaper from "../../assets/ContactWallpaper.png"
 
 export const BlogPostContainer = styled.div`
     width: 100%;
@@ -20,6 +20,19 @@ export const BlogPostContainer = styled.div`
         margin-bottom: 5rem;
 
         color: ${props => props.theme["blue-500"]};
+    }
+
+    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        text-align: center;
+        margin-top: -10rem;
+    }
+
+    .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 `;
 
@@ -59,23 +72,12 @@ export const PostContent = styled.div`
 `;
 
 export const BackgroundWrapper = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 9900px;
+    height: 100vh;
     background-color: ${props => props.theme["white-500"]};
-`;
-
-export const BackgroundContactWallpaper = styled.div`
-    position: absolute;
-    top: 9900px;
-    left: 0;
-    width: 100%;
-    height: 420px;
-    background-image: url(${CleaningWallpaper});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     z-index: 0;
+    margin-bottom: 5rem;
 `;

@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 import { Header } from "../../components/Header";
-import { BackgroundColorWrapper, BackgroundContactWallpaper, BackgroundImageWallpaperSpecialService, SimulationContainer } from "./styles";
+import { BackgroundColorWrapper, BackgroundImageWallpaperSpecialService, SimulationContainer } from "./styles";
 import { SimulationForm } from "./components/SimulationForm";
 import { ContactInfo } from "../../components/ContactInfo";
 import { FormBudget } from "../../components/FormBudget";
@@ -19,11 +19,8 @@ export function SimulationPage() {
     return (
         <>
             <BackgroundColorWrapper />
-            <BackgroundContactWallpaper />
-            {isSpecialService ? (
+            {isSpecialService && (
                 <BackgroundImageWallpaperSpecialService />
-            ) : (
-                <BackgroundContactWallpaper />
             )}
 
             <SimulationContainer>
@@ -34,20 +31,18 @@ export function SimulationPage() {
                         {/* <h1>Simulação de {serviceType.replace(/-/g, ' ')}</h1>
 
                         <span>Este serviço tem condições especiais, por favor, entre em contato para mais informações.</span> */}
+                            <div id="SpecialServiceContainer">
+                                <h3>A melhor limpeza de {serviceType.replace(/-/g, ' ')}.</h3>
 
-                        <div id="SpecialServiceContainer">
-                            <h3>A melhor limpeza de {serviceType.replace(/-/g, ' ')}.</h3>
+                                <FormBudget hasTextArea title={`Faça um orçamento do seu ${serviceType.replace(/-/g, ' ')}`} />
+                            </div>
 
-                            <FormBudget hasTextArea title={`Faça um orçamento do seu ${serviceType.replace(/-/g, ' ')}`} />
-                        </div>
-
-                        <div id="contactMargin2">
+                        <div className="content">
                             <ContactInfo bgColor="white" />
                         </div>
                     </>
                 ) : (
                     <>
-                    
                         <h1>Simulação de { (serviceType ?? 'serviço desconhecido').replace(/-/g, ' ')}</h1>
 
                         <span>
@@ -55,8 +50,8 @@ export function SimulationPage() {
                         </span>
 
                         <SimulationForm serviceType={serviceType} />
-
-                        <div id="contactMargin">
+                            
+                        <div className="content">
                             <ContactInfo bgColor="white" />
                         </div>
                     </>
