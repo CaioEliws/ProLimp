@@ -18,7 +18,7 @@ export const BackgroundColorWrapper = styled.div`
     }
 
     @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-        height: 230vh;
+        height: 220vh;
     }
 `;
 
@@ -72,6 +72,11 @@ export const SimulationContainer = styled.main`
             border-radius: 8px;
         }
 
+        @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+            flex-direction: column;
+            margin-top: -5rem;
+            gap: 5rem;
+        }
     }
 
     > span {

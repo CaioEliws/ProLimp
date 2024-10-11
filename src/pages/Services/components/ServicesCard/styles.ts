@@ -12,6 +12,11 @@ export const ServicesCardContainer = styled(Link)`
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 
+    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        width: 24rem;
+        height: 30rem;
+    }
+
     &:hover {
         background: ${props => props.theme["white-900"]};
     }
@@ -28,6 +33,11 @@ export const ServicesCardContainer = styled(Link)`
         justify-content: center;
 
         padding: 7rem 2.4rem 0 2.4rem;
+
+        @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+            width: 24rem;
+            height: 15rem;
+        }
     }
 
     h2 {
@@ -35,5 +45,9 @@ export const ServicesCardContainer = styled(Link)`
         margin: 7rem 0 5rem; 
 
         color: ${props => props.theme["blue-500"]};
+
+        @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+            margin: 3rem 2rem;
+        }
     }
 `;

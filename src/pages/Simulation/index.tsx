@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 import { Header } from "../../components/Header";
 import { BackgroundColorWrapper, BackgroundImageWallpaperSpecialService, SimulationContainer } from "./styles";
-import { SimulationForm } from "./components/SimulationForm";
+import { SimulationForm } from "./components/SimulationForm"
 import { ContactInfo } from "../../components/ContactInfo";
 import { FormBudget } from "../../components/FormBudget";
 
@@ -14,7 +14,7 @@ export function SimulationPage() {
         window.scrollTo(0, 0);
     }, []);
 
-    const isSpecialService = serviceType === 'carpete' || serviceType === 'tapete';
+    const isSpecialService = serviceType === 'carpete' || serviceType === 'tapete' || serviceType === 'sofá';
 
     return (
         <>

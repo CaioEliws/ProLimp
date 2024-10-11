@@ -134,7 +134,7 @@ export const simulationValuesData: Record<string, SimulationValuesDataProps[]> =
             id: "poltrona-grande",
             src: PoltronaGrande,
             title: "Poltrona Grande",
-            price: 95,
+            price: 110,
         }
     ],
     divã: [

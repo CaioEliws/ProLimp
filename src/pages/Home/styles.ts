@@ -154,10 +154,6 @@ export const BackgroundWrapper2 = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-
-    /* @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-        top: 4200px;
-    } */
 `;
 
 export const Evidences = styled.div`

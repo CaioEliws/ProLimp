@@ -19,6 +19,10 @@ export const ImageInputContent = styled.div`
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        flex-direction: column;
+    }
 `;
 
 export const ImageInput = styled.button<ImageInputProps>`

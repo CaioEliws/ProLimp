@@ -7,6 +7,10 @@ export const BlogCardsContainer = styled(Link)`
 
     background: ${props => props.theme["white-500"]};
     border-radius: 16px;
+
+    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        width: 24rem;
+    }
     
     transition: .2s;
     &:hover {
@@ -26,6 +30,10 @@ export const BlogCardsContainer = styled(Link)`
         border-top-left-radius: 16px;
 
         object-fit: cover;
+
+        @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+            height: 20rem;
+        }
     }
 
     p {

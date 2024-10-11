@@ -46,7 +46,7 @@ export function ServicesCard({ title }: ServicesCardProps) {
 
     return (
         <ServicesCardContainer to={serviceRoute}>
-            <img src={img} alt={title} />
+            <img src={img} alt={title} id="imageContainer" />
             <h2>{title}</h2>
         </ServicesCardContainer>
     );

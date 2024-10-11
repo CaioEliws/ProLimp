@@ -49,7 +49,7 @@ export const BackgroundWrapper = styled.div`
     }
 
     @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-        height: 700vh;
+        height: 545vh;
     }
 `;
 
