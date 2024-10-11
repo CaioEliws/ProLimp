@@ -1,5 +1,3 @@
-import testImage2 from "./Images/simulations/testeImage2.png"
-
 import Sofa2Lugar from "./Images/simulations/sofa2lugar.jpg"
 import Sofa3Lugar from "./Images/simulations/sofa3lugar.png"
 
