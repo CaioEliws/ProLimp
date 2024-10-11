@@ -4,11 +4,11 @@ import styled from "styled-components";
 import CarpeteTapeteWallpaper from "../../assets/carpete-tapete-background.jpg";
 
 export const BackgroundColorWrapper = styled.div`
-    position: absolute; /* Alterado para relative */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto; /* Mantido como auto para cobrir todo o conteúdo */
+    height: auto;
     background-color: ${props => props.theme["white-500"]};
 
     padding: 0 20px;
@@ -81,7 +81,7 @@ export const BackgroundImageWallpaperSpecialService = styled.div`
     top: 80px;
     left: 0;
     width: 100%;
-    height: 1350px; /* Você pode ajustar isso se necessário */
+    height: 1250px;
     background-image: url(${CarpeteTapeteWallpaper});
     background-size: cover;
     background-position: center;
