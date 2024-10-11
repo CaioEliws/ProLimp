@@ -1,25 +1,17 @@
 import styled from "styled-components";
 
 // import CleaningWallpaper from "../../assets/ContactWallpaper.png"
-import CarpeteTapeteWallpaper from "../../assets/carpete-tapete-background.jpg"
+import CarpeteTapeteWallpaper from "../../assets/carpete-tapete-background.jpg";
 
 export const BackgroundColorWrapper = styled.div`
-    position: absolute;
+    position: absolute; /* Alterado para relative */
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: auto; /* Mantido como auto para cobrir todo o conteúdo */
     background-color: ${props => props.theme["white-500"]};
 
-    height: 130vh;
-
-    @media (max-width: ${props => props.theme.breakpoints.tablet}) {
-        height: 100vh;
-    }
-
-    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
-        height: 220vh;
-    }
+    padding: 0 20px;
 `;
 
 export const SimulationContainer = styled.main`
@@ -45,20 +37,20 @@ export const SimulationContainer = styled.main`
 
     > h1 {
         font-size: 5.6rem;
-    
         display: flex;
         justify-content: center;
         align-items: center;
-    
         margin-top: 5rem;
         margin-bottom: 2rem;
-    
         color: ${props => props.theme["blue-500"]};
+
+        @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+            margin-top: -5rem;
+        }
     }
 
     #SpecialServiceContainer {
         margin-top: 20rem;
-
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -66,8 +58,7 @@ export const SimulationContainer = styled.main`
         > h3 {
             font-size: 3rem;
             color: ${props => props.theme["black"]};
-
-            background-color: ${props => props.theme["blue-100"]};;
+            background-color: ${props => props.theme["blue-100"]};
             padding: 2rem;
             border-radius: 8px;
         }
@@ -90,7 +81,7 @@ export const BackgroundImageWallpaperSpecialService = styled.div`
     top: 80px;
     left: 0;
     width: 100%;
-    height: 1350px;
+    height: 1350px; /* Você pode ajustar isso se necessário */
     background-image: url(${CarpeteTapeteWallpaper});
     background-size: cover;
     background-position: center;
@@ -98,7 +89,6 @@ export const BackgroundImageWallpaperSpecialService = styled.div`
     z-index: 0;
 `;
 
-
-export const SimulationContent =  styled.div`
+export const SimulationContent = styled.div`
     width: 100%;  
 `;
