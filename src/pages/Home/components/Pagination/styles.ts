@@ -30,6 +30,7 @@ export const Title = styled.h1`
 
     @media (max-width: ${props => props.theme.breakpoints.mobile}) {
         font-size: 2rem;
+        padding: 5rem 3rem 5rem;
     }
 `;
 

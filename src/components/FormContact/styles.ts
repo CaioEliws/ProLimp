@@ -14,6 +14,10 @@ export const Form = styled.form`
     
     margin-top: 7rem;
 
+    @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+        padding: 5rem 3rem;
+    }
+
     input {
         width: 100%;
 
